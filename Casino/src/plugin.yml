@@ -10,3 +10,4 @@ commands:
   casino:
      usage: /casino
      permission: Casino.casino
+     description: Base command

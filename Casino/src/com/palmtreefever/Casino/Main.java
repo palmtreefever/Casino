@@ -9,14 +9,15 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.palmtreefever.Casino.commands.CommandHandler;
 import com.palmtreefever.Casino.commands.Casino;
+import com.palmtreefever.Casino.commands.CommandHandler;
+import com.palmtreefever.Casino.commands.Reload;
 import com.palmtreefever.Casino.commands.Wool;
 import com.palmtreefever.Casino.events.InventoryInteraction;
 
 public class Main extends JavaPlugin implements Listener {
 
-	public static Plugin plugin; // TODO: Developed by palmtreefever#2614
+	public static Plugin plugin; // TODO: Developed by palm#2614
 
 	public static Economy econ;
 
@@ -27,7 +28,7 @@ public class Main extends JavaPlugin implements Listener {
 		 Bukkit.getPluginManager().registerEvents(new InventoryInteraction(), this);
 		if (!getDataFolder().exists()) {
 			getDataFolder().mkdirs();
-			saveResource("casino.yml", false);
+			saveResource("casino.yml", false); //custom file for storing data in the future
 		}
 		loadConfig();// config.yml
 	}
@@ -38,10 +39,10 @@ public class Main extends JavaPlugin implements Listener {
 
 	private boolean loadVault() {
 		if (!this.setupEconomy()) {
-			Bukkit.getConsoleSender().sendMessage("\u00a7b\u00a7l[Gamble] No Economy found, using command");
+			Bukkit.getConsoleSender().sendMessage("\u00a7b\u00a7l[Casino] No Economy found, using command");
 			return false;
 		}
-		Bukkit.getConsoleSender().sendMessage("\u00a7b\u00a7l[Gamble] Economy found, hooking.");
+		Bukkit.getConsoleSender().sendMessage("\u00a7b\u00a7l[Casino] Economy found, hooking.");
 		return true;
 	}
 
@@ -53,6 +54,7 @@ public class Main extends JavaPlugin implements Listener {
 	public void registerCommands() {
         CommandHandler handler = new CommandHandler();
         handler.register("casino", new Casino());
+        handler.register("reload", new Reload());
         handler.register("wool", new Wool());
 		getCommand("casino").setExecutor(handler);
 	}

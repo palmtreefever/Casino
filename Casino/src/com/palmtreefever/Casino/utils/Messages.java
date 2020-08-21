@@ -3,10 +3,14 @@ package com.palmtreefever.Casino.utils;
 import org.bukkit.ChatColor;
 
 public enum Messages {
-	PREFIX(ChatColor.GRAY + "["+ ChatColor.GREEN + "Gamble" + ChatColor.GRAY + "] " + ChatColor.RESET),
+	PREFIX(ChatColor.GRAY + "["+ ChatColor.GREEN + "Casino" + ChatColor.GRAY + "] " + ChatColor.RESET),
 	NO_PERMISSION(ChatColor.RED + "You do not have permission to use this command!"), //maybe change this to NO_AUTHORITY or make it seperate. probably seperate
 	UNKNOWN_CMD_ERROR(ChatColor.RED + "Unknown Command!"),
 	NOT_PLAYER_CMD_ERROR(ChatColor.RED + "Must be a player to use this command!"),
+	
+	CONFIG_RELOAD(ChatColor.GREEN + "Successfully " + ChatColor.AQUA + "RELOADED" + 
+	ChatColor.YELLOW + " Casino " + ChatColor.WHITE + "config.yml" + ChatColor.YELLOW + "!"),
+	
 	HELP_FORMAT(ChatColor.RED + "/casino help"),
 	RELOAD_FORMAT(ChatColor.RED + "/casino reload");
 	
