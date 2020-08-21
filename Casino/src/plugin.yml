@@ -1,0 +1,12 @@
+name: Casino
+main: com.palmtreefever.Casino.Main
+version: 1.0
+api-version: 1.14
+author: palmtreefever
+description: Fuel your gambling addiction!
+depend: [Vault]
+
+commands:
+  casino:
+     usage: /casino
+     permission: Casino.casino

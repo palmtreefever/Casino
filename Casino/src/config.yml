@@ -1,0 +1,16 @@
+#Casino
+#Version 1.0
+#Made by palmtreefever
+
+#ServerPrefix
+ServerPrefix: '&4Disaster Den Gaming'
+
+WoolCost: 1000
+
+WoolPayout: 1500
+
+CantGamble: '&4Unable to gamble as youre broke!'
+
+LostWool: ' &4Better luck next time!'
+
+WinWool: ' &aYou have won '
